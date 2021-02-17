@@ -1,0 +1,6 @@
+{"app":{
+  "jwtPrivateKey": "vidly_jwtPrivateKey"
+},
+  
+  "db": "mongodb://localhost:27017/vidly"
+}
