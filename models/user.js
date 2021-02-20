@@ -48,7 +48,7 @@ function validateUser(user) {
         username: Joi.string().min(5).max(50).required(),
         email: Joi.string().min(5).max(50).email().required(),
 
-        password: PasswordComplexity()
+        password: Joi.string().min(5).max(50).required()
 
 
 

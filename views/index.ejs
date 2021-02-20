@@ -10,24 +10,36 @@
   Node and Express are the best!
   <div>
   <form action="http://localhost:3000/api/users" method="POST">
-    <input id="name" type="text" placeholder="name" name="name">
-    <input type="text" placeholder="message" name="message">
+    <input id="name" type="text" placeholder="username" name="username">
+    <input type="email" placeholder="email" name="email">
+    <input type="password" placeholder="password" name="password">
+
     <button type="submit">Submit</button>
+    <%= users.username %>
   </form>
     <button id="update"> Update to Doggerino </button>
     <button id="delete"> Delete message</button>
 
   </div>
 
-  <ul class="messages">
-    <% for(var i=0; i<messages.length; i++) {%>
-      <li class="messages">
-        <span><%= messages[i].name + " says: " %></span>
-        <span><%= messages[i].message %></span>
+  <ul class="users">
+    <% for(var i=0; i<users.length; i++) {%>
+      <li class="users">
+        <span><%= users[i].username %></span>
+        <span><%= users[i].email %></span>
       </li>
       <% } %>
   </ul>
-<script src="main.js"></script>
+ <!-- <% if (messages.success) { %>
+    <div class="alert alert-success" role="alert"><%- messages.success %></div>
+    <% } %>
+
+    <% if (messages.error) { %>
+    <div class="alert alert-danger" role="alert"><%- messages.error %></div>
+    <% } %> -->
+
+
+<!--script src="main.js"></script-->
 </body>
 
 </html>

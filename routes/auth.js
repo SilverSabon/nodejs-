@@ -19,7 +19,7 @@ router.post('/', async (req, res) => {
   if (!user) return res.status(400).send('email or password is incorrect.');
 
  const validpassword = await bcrypt.compare(req.body.password,user.password)
- if (!validpassword) return res.status(400).send('email or password is incorrect.');
+ if (!validpassword) return res.status(400).send(' password is incorrect.');
 
 
 
@@ -33,16 +33,16 @@ router.post('/', async (req, res) => {
          
 
 //_.pick('email','username');
- res.send(token);
+res.render('sucesss');
 });
 function validate(req) {
 
     const schema = Joi.object({
-        username: Joi.string().min(5).max(255).required(),
+        username: Joi.string().min(5).max(255),
 
 
         password: Joi.string().min(5).max(255).required(),
-        email: Joi.string().min(5).max(255).email().required()
+        email: Joi.string().min(5).max(255).email()
 
 
 
